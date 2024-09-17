@@ -5,6 +5,7 @@ import siguiente from "../assets/img/siguiente.png";
 import card3 from "../assets/img/card3.png";
 import card2 from "../assets/img/card2.png";
 import card1 from "../assets/img/card1.png";
+
 const About = () => {
   const [tarjetaActualIndex, setTarjetaActualIndex] = useState(0);
 
@@ -70,15 +71,19 @@ const About = () => {
         <h3>Mis Aventuras Personales</h3>
         <p>Cuando me desconecto de la pantalla, me enfoco en mi vida personal y aficiones.</p>
         <div className="mazo-cards row d-flex justify-content-center align-items-center">
-          <button className="col-2 ctr" onClick={mostrarTarjetaAnterior}><img src={anterior} alt="Anterior" /></button>
+          <button className="col-2 ctr" onClick={mostrarTarjetaAnterior}>
+            <img src={anterior} alt="Mostrar tarjeta anterior" />
+          </button>
           <div className="card col-8" id="targetaM" style={{ maxWidth: '50%' }}>
-            <img className="card-img-top" src={tarjetas[tarjetaActualIndex].imagen} alt="Card image cap" />
+            <img className="card-img-top" src={tarjetas[tarjetaActualIndex].imagen} alt={tarjetas[tarjetaActualIndex].titulo} />
             <div className="card-body">
               <h5 className="card-title">{tarjetas[tarjetaActualIndex].titulo}</h5>
               <p className="card-text">{tarjetas[tarjetaActualIndex].contenido}</p>
             </div>
           </div>
-          <button className="col-2 ctr" onClick={mostrarTarjetaSiguiente}><img src={siguiente} alt="Siguiente" /></button>
+          <button className="col-2 ctr" onClick={mostrarTarjetaSiguiente}>
+            <img src={siguiente} alt="Mostrar tarjeta siguiente" />
+          </button>
         </div>  
         <p className="frase">
           Estas facetas de mi vida se entrelazan para formar una imagen completa de quien soy
